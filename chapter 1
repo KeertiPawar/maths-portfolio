@@ -98,3 +98,856 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measures of Central Tendency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f6f8;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #eaeaea;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Measures of Central Tendency</h1>
+
+    <div class="section">
+        <p>
+            Measures of central tendency are statistical tools used to identify the central or representative value
+            of a dataset. They provide a concise summary of data and are widely used in engineering, data analysis,
+            machine learning, and decision-making.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>1. Mean</h2>
+
+        <h3>Mean for Discrete Data</h3>
+        <p>
+            The arithmetic mean of a discrete data set is calculated by dividing the sum of all observations
+            by the total number of observations.
+        </p>
+
+        <p><strong>Formula:</strong></p>
+        <p>x̄ = (Σx) / n</p>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li>x = observation</li>
+            <li>n = number of observations</li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <p>Data: 10, 20, 30, 40, 50</p>
+        <p>Mean = (10 + 20 + 30 + 40 + 50) / 5 = <strong>30</strong></p>
+
+        <h3>Mean for Continuous (Grouped) Data</h3>
+        <p>
+            For grouped data, the mean is calculated using class midpoints and frequencies.
+        </p>
+
+        <p><strong>Formula:</strong></p>
+        <p>x̄ = (Σf·x) / Σf</p>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li>f = frequency</li>
+            <li>x = class midpoint</li>
+        </ul>
+
+        <p><strong>Engineering Application:</strong></p>
+        <p>
+            Mean is used in signal processing, performance evaluation, and quality control.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>2. Median</h2>
+
+        <h3>Median for Discrete Data</h3>
+        <p>
+            The median is the middle value when data is arranged in ascending or descending order.
+        </p>
+
+        <p><strong>Steps:</strong></p>
+        <ul>
+            <li>Arrange data in order</li>
+            <li>If n is odd → Median = middle value</li>
+            <li>If n is even → Median = average of two middle values</li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <p>Data: 15, 20, 25, 30, 35</p>
+        <p>Median = <strong>25</strong></p>
+
+        <h3>Median for Continuous (Grouped) Data</h3>
+        <p>
+            The median is calculated using the median class and cumulative frequency.
+        </p>
+
+        <p><strong>Formula:</strong></p>
+        <p>
+            Median = l + [ ((N/2) − cf) / f ] × h
+        </p>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li>l = lower boundary of median class</li>
+            <li>N = total frequency</li>
+            <li>cf = cumulative frequency before median class</li>
+            <li>f = frequency of median class</li>
+            <li>h = class width</li>
+        </ul>
+
+        <p>
+            Median is preferred for skewed data such as income, network latency, or response time analysis.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>3. Mode</h2>
+
+        <h3>Mode for Discrete Data</h3>
+        <p>
+            Mode is the value that occurs most frequently in a dataset.
+        </p>
+
+        <p><strong>Example:</strong></p>
+        <p>Data: 2, 4, 4, 6, 8</p>
+        <p>Mode = <strong>4</strong></p>
+
+        <h3>Mode for Continuous (Grouped) Data</h3>
+        <p>
+            Mode is calculated using the modal class (class with the highest frequency).
+        </p>
+
+        <p><strong>Formula:</strong></p>
+        <p>
+            Mode = l + [ (f₁ − f₀) / (2f₁ − f₀ − f₂) ] × h
+        </p>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li>l = lower boundary of modal class</li>
+            <li>f₁ = frequency of modal class</li>
+            <li>f₀ = frequency of preceding class</li>
+            <li>f₂ = frequency of succeeding class</li>
+            <li>h = class width</li>
+        </ul>
+
+        <p>
+            Mode is especially useful for categorical data and market demand analysis.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Comparison of Mean, Median, and Mode</h2>
+
+        <table>
+            <tr>
+                <th>Aspect</th>
+                <th>Mean</th>
+                <th>Median</th>
+                <th>Mode</th>
+            </tr>
+            <tr>
+                <td>Definition</td>
+                <td>Arithmetic average of all values</td>
+                <td>Middle value of ordered data</td>
+                <td>Most frequently occurring value</td>
+            </tr>
+            <tr>
+                <td>Formula</td>
+                <td>Σx / n</td>
+                <td>Depends on position (N/2)</td>
+                <td>Frequency-based</td>
+            </tr>
+            <tr>
+                <td>Sensitivity to Outliers</td>
+                <td>Highly sensitive</td>
+                <td>Not sensitive</td>
+                <td>Not affected</td>
+            </tr>
+            <tr>
+                <td>Suitable for Skewed Data</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Applicable to Categorical Data</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Engineering Applications</td>
+                <td>Performance analysis, optimization</td>
+                <td>Network latency, income analysis</td>
+                <td>Demand analysis, classification</td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measures of Dispersion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f6f8;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+        .formula {
+            background-color: #eef2f5;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Measures of Dispersion</h1>
+
+    <div class="section">
+        <p>
+            Measures of dispersion describe the extent to which data values are spread or scattered around
+            a central value. While measures of central tendency indicate the average behavior, dispersion
+            measures help assess variability, consistency, and reliability of data.
+        </p>
+        <p>
+            In engineering, dispersion is crucial for performance analysis, quality control, reliability
+            testing, and data-driven modeling.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>1. Range</h2>
+        <p>
+            Range is the simplest measure of dispersion and represents the difference between the maximum
+            and minimum values of a dataset.
+        </p>
+
+        <div class="formula">
+            Range = Maximum value − Minimum value
+        </div>
+
+        <p><strong>Example (Discrete Data):</strong></p>
+        <p>Data: 10, 20, 35, 50, 60</p>
+        <p>Range = 60 − 10 = <strong>50</strong></p>
+
+        <p>
+            Range provides a quick estimate of spread but is highly sensitive to extreme values.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>2. Variance</h2>
+
+        <h3>Variance for Discrete Data</h3>
+        <p>
+            Variance measures the average squared deviation of each observation from the mean.
+        </p>
+
+        <div class="formula">
+            σ² = Σ(x − x̄)² / n
+        </div>
+
+        <p><strong>Example:</strong></p>
+        <p>Data: 2, 4, 6</p>
+        <p>Mean = 4</p>
+        <p>
+            Variance = [(2−4)² + (4−4)² + (6−4)²] / 3 = <strong>8 / 3</strong>
+        </p>
+
+        <h3>Variance for Continuous (Grouped) Data</h3>
+        <p>
+            For grouped data, variance is calculated using class midpoints and frequencies.
+        </p>
+
+        <div class="formula">
+            σ² = Σf(x − x̄)² / Σf
+        </div>
+
+        <p>
+            Variance is widely used in signal processing, control systems, and data modeling.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>3. Standard Deviation</h2>
+        <p>
+            Standard deviation is the square root of variance and expresses dispersion in the same units
+            as the original data, making it easier to interpret.
+        </p>
+
+        <div class="formula">
+            σ = √σ²
+        </div>
+
+        <p><strong>Example:</strong></p>
+        <p>If variance = 9</p>
+        <p>Standard deviation = √9 = <strong>3</strong></p>
+
+        <p>
+            A smaller standard deviation indicates that data values are closer to the mean,
+            while a larger value indicates greater variability.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>4. Coefficient of Variation (CV)</h2>
+        <p>
+            The coefficient of variation is a relative measure of dispersion that compares
+            the standard deviation with the mean.
+        </p>
+
+        <div class="formula">
+            CV = (σ / x̄) × 100
+        </div>
+
+        <p><strong>Example:</strong></p>
+        <p>Mean = 50, Standard Deviation = 5</p>
+        <p>CV = (5 / 50) × 100 = <strong>10%</strong></p>
+
+        <p>
+            CV is useful for comparing variability between datasets with different units or means,
+            such as comparing machine efficiency or system performance.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Importance of Measures of Dispersion</h2>
+        <ul>
+            <li>Help assess consistency and reliability of data</li>
+            <li>Support risk analysis and quality assurance</li>
+            <li>Essential in AI, ML, and data science models</li>
+            <li>Used in network traffic analysis and performance tuning</li>
+        </ul>
+
+        <p>
+            Measures of dispersion complement measures of central tendency and together provide
+            a complete statistical description of data.
+        </p>
+    </div>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skewness and Data Distribution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f4f6f8;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+        .formula {
+            background-color: #eef2f5;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: #f9fbfc;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Skewness and Data Distribution</h1>
+
+    <div class="section">
+        <p>
+            Skewness describes the degree of asymmetry in a data distribution around its mean.
+            While measures of central tendency and dispersion summarize data numerically,
+            skewness explains the <em>shape</em> of the distribution.
+        </p>
+        <p>
+            Understanding skewness is essential in engineering, data science, machine learning,
+            economics, and network performance analysis.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Data Distribution</h2>
+        <p>
+            A data distribution shows how values are spread across different ranges.
+            It is commonly visualized using histograms or frequency curves.
+        </p>
+
+        <ul>
+            <li><strong>Symmetric distribution:</strong> Mean = Median = Mode</li>
+            <li><strong>Positively skewed distribution:</strong> Mean &gt; Median &gt; Mode</li>
+            <li><strong>Negatively skewed distribution:</strong> Mean &lt; Median &lt; Mode</li>
+        </ul>
+
+        <p>
+            The shape of the distribution affects the choice of statistical methods
+            and interpretation of results.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Skewness</h2>
+        <p>
+            Skewness measures the lack of symmetry in a frequency distribution.
+            A perfectly symmetric distribution has zero skewness.
+        </p>
+
+        <ul>
+            <li><strong>Zero Skewness:</strong> Symmetric distribution</li>
+            <li><strong>Positive Skewness:</strong> Tail extends to the right</li>
+            <li><strong>Negative Skewness:</strong> Tail extends to the left</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Graphical Representation of Skewness</h2>
+        <p>
+            Graphs help visualize the shape of a data distribution and clearly indicate
+            whether the data is symmetric, positively skewed, or negatively skewed.
+        </p>
+
+        <div class="highlight">
+            <p><strong>Symmetric Distribution (Sk = 0)</strong></p>
+            <p>Mean = Median = Mode</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Positively Skewed Distribution (Right Skew)</strong></p>
+            <p>Mode &lt; Median &lt; Mean</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Negatively Skewed Distribution (Left Skew)</strong></p>
+            <p>Mean &lt; Median &lt; Mode</p>
+        </div>
+
+        <p><strong>From the graphs:</strong></p>
+        <ul>
+            <li>Symmetric distribution → Mean = Median = Mode</li>
+            <li>Positive skewness → Mean &gt; Median &gt; Mode</li>
+            <li>Negative skewness → Mean &lt; Median &lt; Mode</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Karl Pearson’s Coefficient of Skewness</h2>
+
+        <p><strong>Formula (when mode is known):</strong></p>
+        <div class="formula">
+            Sk = (Mean − Mode) / Standard Deviation
+        </div>
+
+        <p><strong>Formula (when mode is not known):</strong></p>
+        <div class="formula">
+            Sk = 3(Mean − Median) / Standard Deviation
+        </div>
+
+        <p><strong>Solved Example (Positive Skewness):</strong></p>
+        <p>Mean = 60, Median = 55, Standard Deviation = 10</p>
+        <p>
+            Sk = 3(60 − 55) / 10 = 15 / 10 = <strong>1.5</strong>
+        </p>
+        <p>
+            Since skewness is positive, the distribution is right-skewed.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Bowley’s Coefficient of Skewness</h2>
+        <p>
+            Bowley’s method is used when quartiles are available and is suitable
+            for open-ended distributions.
+        </p>
+
+        <div class="formula">
+            Sk = (Q₃ + Q₁ − 2Q₂) / (Q₃ − Q₁)
+        </div>
+
+        <p><strong>Where:</strong></p>
+        <ul>
+            <li>Q₁ = First quartile</li>
+            <li>Q₂ = Median</li>
+            <li>Q₃ = Third quartile</li>
+        </ul>
+
+        <p><strong>Solved Example (Negative Skewness):</strong></p>
+        <p>Q₁ = 30, Q₂ = 40, Q₃ = 45</p>
+        <p>
+            Sk = (45 + 30 − 2×40) / (45 − 30) = (75 − 80) / 15 = <strong>-0.33</strong>
+        </p>
+
+        <p>
+            Negative skewness indicates a left-skewed distribution.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Symmetric Distribution Example</h2>
+        <p>Mean = Median = Mode = 50</p>
+        <p>
+            Since all three measures are equal, skewness is zero and the data
+            is perfectly symmetric.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Engineering and Data Science Applications</h2>
+        <ul>
+            <li>Performance analysis and response time evaluation</li>
+            <li>Income and demand analysis</li>
+            <li>Feature distribution analysis in Machine Learning</li>
+            <li>Network traffic and latency modeling</li>
+        </ul>
+
+        <p>
+            Skewness helps engineers and analysts choose suitable statistical models
+            and make reliable predictions.
+        </p>
+    </div>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background: #f2f4f7;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        /* ===== Content Box ===== */
+        .content-box {
+            background: #ffffff;
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            max-width: 700px;   /* BIGGER box */
+        }
+
+        /* ===== Histogram ===== */
+        .histogram-wrapper {
+            position: relative;
+            width: 420px;   /* SMALLER graph */
+            margin: 20px auto;
+        }
+
+        .y-axis {
+            position: absolute;
+            left: -45px;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .x-axis {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            height: 180px;
+            border-left: 2px solid black;
+            border-bottom: 2px solid black;
+            padding: 10px 10px 0 30px;
+        }
+
+        .bar {
+            width: 50px;
+            background-color: #3498db;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .label {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* ===== Box Plot ===== */
+        .boxplot {
+            position: relative;
+            width: 420px;   /* SMALLER graph */
+            height: 120px;
+            margin: 30px auto;
+        }
+
+        .line {
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            height: 2px;
+            background: black;
+        }
+
+        .box {
+            position: absolute;
+            top: 25px;
+            height: 30px;
+            background: #2ecc71;
+            border: 2px solid black;
+        }
+
+        .median {
+            position: absolute;
+            top: 25px;
+            width: 2px;
+            height: 30px;
+            background: black;
+        }
+
+        .point {
+            position: absolute;
+            top: 36px;
+            width: 8px;
+            height: 8px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .box-label {
+            position: absolute;
+            top: 70px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Data Visualization</h1>
+
+<div class="content-box">
+<p>
+Data visualization is the graphical representation of data to understand patterns, trends,
+distributions, and anomalies. Visual tools such as histograms and box plots help transform
+raw numerical data into meaningful insights.
+</p>
+</div>
+
+<h2>Histogram</h2>
+
+<div class="content-box">
+<p>
+A histogram represents the frequency distribution of continuous data.
+Data is grouped into class intervals, and rectangles are drawn whose heights represent frequencies.
+</p>
+
+<h3>Example: Marks Obtained</h3>
+<p>Marks: 40, 45, 50, 55, 60, 60, 65, 70, 75, 80</p>
+
+<h3>Histogram Representation</h3>
+
+<div class="histogram-wrapper">
+    <div class="y-axis">Frequency</div>
+
+    <div class="chart">
+        <div>
+            <div class="bar" style="height:70px;">2</div>
+            <div class="label">40–50</div>
+        </div>
+        <div>
+            <div class="bar" style="height:110px;">3</div>
+            <div class="label">50–60</div>
+        </div>
+        <div>
+            <div class="bar" style="height:110px;">3</div>
+            <div class="label">60–70</div>
+        </div>
+        <div>
+            <div class="bar" style="height:70px;">2</div>
+            <div class="label">70–80</div>
+        </div>
+    </div>
+
+    <div class="x-axis">Marks</div>
+</div>
+
+<h3>Applications of Histogram</h3>
+<ul>
+    <li>Analyzing data distribution</li>
+    <li>Identifying skewness</li>
+    <li>Quality control in manufacturing</li>
+    <li>Performance analysis in engineering systems</li>
+</ul>
+</div>
+
+<h2>Box Plot</h2>
+
+<div class="content-box">
+<p>
+A box plot (box-and-whisker plot) represents data using the five-number summary:
+minimum, Q₁, median, Q₃, and maximum.
+</p>
+
+<h3>Example Dataset</h3>
+<p>Data: 10, 20, 25, 30, 35, 40, 45</p>
+
+<h3>Box Plot Representation</h3>
+
+<div class="boxplot">
+    <div class="line"></div>
+
+    <div class="point" style="left:0px;"></div>
+    <div class="box-label" style="left:0px;">Min</div>
+
+    <div class="box" style="left:90px; width:220px;"></div>
+    <div class="box-label" style="left:90px;">Q₁</div>
+    <div class="box-label" style="left:290px;">Q₃</div>
+
+    <div class="median" style="left:200px;"></div>
+    <div class="box-label" style="left:180px;">Median</div>
+
+    <div class="point" style="left:410px;"></div>
+    <div class="box-label" style="left:395px;">Max</div>
+</div>
+
+<h3>Applications of Box Plot</h3>
+<ul>
+    <li>Detecting outliers</li>
+    <li>Comparing multiple datasets</li>
+    <li>Understanding data spread and symmetry</li>
+    <li>Exploratory Data Analysis (EDA) in ML</li>
+</ul>
+</div>
+
+<div class="content-box">
+<h2>Engineering and Data Science Applications</h2>
+<ul>
+    <li>Performance analysis and response time evaluation</li>
+    <li>Income and demand analysis</li>
+    <li>Feature distribution analysis in Machine Learning</li>
+    <li>Network traffic and latency modeling</li>
+</ul>
+</div>
+
+</body>
+</html>
